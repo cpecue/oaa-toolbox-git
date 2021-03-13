@@ -8,7 +8,7 @@ import secrets
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b26a525407d311:5ab57fd3@us-cdbr-east-03.cleardb.com/heroku_6bd972363889aef'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b69d0800da95aa:10d4febf@us-cdbr-east-03.cleardb.com/heroku_6bd972363889aef'
 app.config['SQLALCHEMY_POOL_RECYCLE'] = 40
 
 
