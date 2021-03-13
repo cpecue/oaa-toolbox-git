@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+<body style=""></body>
+                <main style="">
+                    <div class="container-fluid">
+                        <ol class="breadcrumb mt-4">
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+
+                    <div class="container-fluid">
+
+                    <table class="table table-sm table-dark">
+  <thead>
+
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Major</th>
+      <th scope="col">Form</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">03/07/21</th>
+      <td>John</td>
+      <td>Doe</td>
+      <td>BIOM</td>
+      <td>doe_john_biom.pdf</td>
+    </tr>
+    <tr>
+      <th scope="row">03/07/21</th>
+      <td>Jane</td>
+      <td>Doe</td>
+      <td>CHEM</td>
+        <td>doe_jane_chem.pdf</td>
+    </tr>
+    <tr>
+      <th scope="row">03/06/21</th>
+      <td>Bob</td>
+      <td>Smith</td>
+        <td>MC</td>
+        <td>smith_bob_mc.pdf</td>
+    </tr>
+  </tbody>
+</table>
+<hr style="background-color:white;" />
+                    </div>
+
+
+                </main>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="static/scripts.js"></script>
+{% endblock content %}
