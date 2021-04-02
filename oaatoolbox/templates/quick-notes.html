@@ -28,28 +28,29 @@
              <div class="mb-3">
                     <input type="text" class="form-control form-control-lg" id="semester" value="Fall 2021">
                 </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control form-control-lg" id="studentMajor" placeholder="Major(s)">
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control form-control-lg" id="studentMinor" placeholder="Minor(s)">
-                </div>
-                <div class="mb-3">
-                    <select class="form-select form-select-lg studentStatus" aria-label="student status" id="status" onchange="studentStatus()">
-                      <option value="0">New Freshman</option>
-                      <option selected value="1">Continuing</option>
-                      <option value="2">New Transfer</option>
-                      <option value="3">Re-Entry</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <select class="form-select form-select-lg" aria-label="academic status" id="academicStanding">
-                      <option selected>Good Standing</option>
-                      <option value="1">Warning</option>
-                      <option value="2">Probation</option>
-                      <option value="3">Suspension</option>
-                    </select>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control form-control-lg" id="studentMajor" placeholder="Major(s)">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control form-control-lg" id="studentMinor" placeholder="Minor(s)">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <select class="form-select form-select-lg studentStatus" aria-label="student status" id="status" onchange="studentStatus()">
+                            <option value="0">New Freshman</option>
+                            <option selected value="1">Continuing</option>
+                            <option value="2">New Transfer</option>
+                            <option value="3">Re-Entry</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <select class="form-select form-select-lg" aria-label="academic status" id="academicStanding">
+                            <option selected>Good Standing</option>
+                            <option value="1">Warning</option>
+                            <option value="2">Probation</option>
+                            <option value="3">Suspension</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="mb-3" id="addSpringboard"></div>
                 <div class="accordion mb-3" id="accordionExample">
