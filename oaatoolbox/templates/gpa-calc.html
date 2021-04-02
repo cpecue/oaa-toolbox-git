@@ -16,18 +16,22 @@
                         <ol class="breadcrumb mt-4">
                             <li class="breadcrumb-item active">GPA Calculator</li>
                         </ol>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">Cumulative GPA Hours</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="cumGPA">
-                            <div class="input-group-prepend ml-3">
-                                <span class="input-group-text" id="basic-addon2">Cumulative Quality Points</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="cumQP">
+                        <div class="row">
+                                <div class="col-md-6">
+                                    <div class="jumbotron" style="padding:5px 10px;">
+                                        <h3 class="badge badge-dark ml-1">Cumulative GPA Hours</h3>
+                                        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="cumGPA">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="jumbotron" style="padding:5px 10px;">
+                                        <h3 class="badge badge-dark ml-1">Cumulative Quality Points</h3>
+                                        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="cumQP">
+                                    </div>
+                                </div>
                         </div>
                         <div class="jumbotron" style="padding:3px;">
-                            <h3 class="badge badge-secondary ml-1">Current GPA</h3>
+                            <h3 class="badge badge-dark ml-1">Current GPA</h3>
                             <center><h1 id="currentGPA">0.000</h1></center>
                         </div>
 
