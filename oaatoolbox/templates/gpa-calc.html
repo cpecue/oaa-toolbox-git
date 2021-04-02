@@ -86,23 +86,39 @@
 
                     </div>
                 </main>
-                        <footer>
-                            <div class="container-fluid">
+                <footer>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-2">
+                            <div class="jumbotron" style="padding:3px;">
+                                                            <h4 class="badge badge-dark ml-1">New Quality Points</h4>
+                            <center><h1 id="newQPLabel">0</h1></center>
+                            </div>
+                            </div>
+                            <div class="col-md-2">
+                            <div class="jumbotron" style="padding:3px;">
+                                                            <h4 class="badge badge-dark ml-1">New GPA Hours</h4>
+                            <center><h1 id="newHoursLabel">0</h1></center>
+                            </div>
+                            </div>
+                            <div class="col-md-8">
                         <div class="jumbotron" style="padding:3px;">
                             <h4 class="badge badge-primary ml-1">New GPA</h4>
                             <center><h1 id="newGPA">0.000</h1></center>
                         </div>
-                                <hr style="color:white;"/>
+                                </div>
+                            </div>
+                        <hr style="color:white;"/>
                         <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <div class="btn btn-dark btn-lg col-mid-6 calcBtn" id="calcBtn" style="width: 100%">Calculate</div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="btn btn-dark btn-lg col-mid-6 clear" style="width: 100%">Clear</div>
-                                </div>
+                        <div class="col-md-6 mb-3">
+                        <div class="btn btn-dark btn-lg col-mid-6 calcBtn" id="calcBtn" style="width: 100%">Calculate</div>
                         </div>
-                                </div>
-                            </footer>
+                        <div class="col-md-6 mb-3">
+                        <div class="btn btn-dark btn-lg col-mid-6 clear" style="width: 100%">Clear</div>
+                        </div>
+                        </div>
+                        </div>
+                </footer>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -146,7 +162,7 @@
 
 
 $(document).on('click','.calcBtn',function() {
-     var cumGPA = parseInt($("#cumGPA").val()) || 0;
+        var cumGPA = parseInt($("#cumGPA").val()) || 0;
         var cumQP = parseInt($("#cumQP").val()) || 0;
         var newGPA = document.getElementById('newGPA');
         var newHours = [];
@@ -244,9 +260,13 @@ $(document).on('click','.calcBtn',function() {
 
         console.log('newRepeatTotal: ' + newRepeatQPTotal);
         console.log('newRepeatHoursTotal: ' + newRepeatHoursTotal);
+        finalQP = newQPTotal - newRepeatQPTotal;
+        finalHours = newHoursTotal - newRepeatHoursTotal;
 
-        newGPAValue = ((newQPTotal - newRepeatQPTotal)/ (newHoursTotal - newRepeatHoursTotal)).toFixed(3);
+        newGPAValue = ( finalQP / finalHours).toFixed(3);
         document.getElementById('newGPA').innerHTML = newGPAValue;
+        document.getElementById('newQPLabel').innerHTML = finalQP;
+        document.getElementById('newHoursLabel').innerHTML = finalHours;
         console.log(newGPAValue);
     });
 
