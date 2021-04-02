@@ -155,6 +155,8 @@ $(document).on('click','.calcBtn',function() {
         repeatHours = [];
         var repeatQP = [];
         var oldGrades = [];
+        oldGrades.push(0);
+        repeatHours.push(0);
         var id = document.getElementsByClassName("courseCredits");
         for (var i = 0; i < id.length; i++) {
             idValue = parseInt(id[i].value);
@@ -163,262 +165,68 @@ $(document).on('click','.calcBtn',function() {
             var gradeArray = $('select[id="gradeCredits"]');
             if ($(repeatYesNo[i]).val() == 1) {
                 console.log('Course is repeated.')
-                    if ($(gradeArray[i]).val() == 1) {
-                        newHours.push(idValue);
-                        grades.push(4);
-                        newQPValue = idValue * 4;
-                            if ($(repeatGradeArray[i]).val() == 1) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -4;
-                                console.log('correct A');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 2) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -3;
-                                console.log('correct B');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 3) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -2;
-                                console.log('correct C');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 4) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -1;
-                                console.log('correct D');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 5) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * 0;
-                                console.log('correct F');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            };
-                    } else if ($(gradeArray[i]).val() == 2) {
-                        newHours.push(idValue);
-                        grades.push(3);
-                        newQPValue = idValue * 3;
-                            if ($(repeatGradeArray[i]).val() == 1) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -4;
-                                console.log('correct A');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 2) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -3;
-                                console.log('correct B');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 3) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -2;
-                                console.log('correct C');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 4) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -1;
-                                console.log('correct D');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 5) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * 0;
-                                console.log('correct F');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            };
-                    } else if ($(gradeArray[i]).val() == 3) {
-                        newHours.push(idValue);
-                        grades.push(2);
-                        newQPValue = idValue * 2;
-                            if ($(repeatGradeArray[i]).val() == 1) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -4;
-                                console.log('correct A');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 2) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -3;
-                                console.log('correct B');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 3) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -2;
-                                console.log('correct C');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 4) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -1;
-                                console.log('correct D');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 5) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * 0;
-                                console.log('correct F');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            };
-                    } else if ($(gradeArray[i]).val() == 4) {
-                         newHours.push(idValue);
-                        grades.push(1);
-                        newQPValue = idValue * 1;
-                            if ($(repeatGradeArray[i]).val() == 1) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -4;
-                                console.log('correct A');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 2) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -3;
-                                console.log('correct B');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 3) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -2;
-                                console.log('correct C');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 4) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -1;
-                                console.log('correct D');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 5) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * 0;
-                                console.log('correct F');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            };
-                    } else if ($(gradeArray[i]).val() == 5) {
-                        newHours.push(idValue);
-                        grades.push(0);
-                        newQPValue = idValue * 0;
-                            if ($(repeatGradeArray[i]).val() == 1) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -4;
-                                console.log('correct A');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 2) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -3;
-                                console.log('correct B');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 3) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -2;
-                                console.log('correct C');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 4) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * -1;
-                                console.log('correct D');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            } else if ($(repeatGradeArray[i]).val() == 5) {
-<!--                                newHours.push(idValue * -1);-->
-                                oldQPValue = idValue * 0;
-                                console.log('correct F');
-                                console.log('Old QP: ' + oldQPValue);
-                                newQPSum = newQPValue + oldQPValue;
-                                console.log('New QP Sum: ' + newQPSum);
-                                newQP.push(newQPSum);
-                            };
+                    if ($(repeatGradeArray[i]).val() == 1) {
+                        oldGrades.push(idValue * 4);
+                        repeatHours.push(idValue);
+                        console.log('Old QP: ' + oldGrades);
+                    } else if ($(repeatGradeArray[i]).val() == 2) {
+                        oldGrades.push(idValue * 3);
+                        repeatHours.push(idValue);
+                        console.log('Old QP: ' + oldGrades);
+                    } else if ($(repeatGradeArray[i]).val() == 3) {
+                        oldGrades.push(idValue * 2);
+                        repeatHours.push(idValue);
+                        console.log('Old QP: ' + oldGrades);
+                    } else if ($(repeatGradeArray[i]).val() == 4) {
+                        oldGrades.push(idValue * 1);
+                        repeatHours.push(idValue);
+                        console.log('Old QP: ' + oldGrades);
+                    } else if ($(repeatGradeArray[i]).val() == 5) {
+                        oldGrades.push(idValue * 0);
+                        repeatHours.push(idValue);
+                        console.log('Old QP: ' + oldGrades);
                     };
-            } else {
-                console.log('Course is not repeated.')
-                if ($(gradeArray[i]).val() == 1) {
-                    newHours.push(idValue);
-                    grades.push(4);
-                    qpValue = idValue * 4;
-                    newQP.push(qpValue);
-                } else if ($(gradeArray[i]).val() == 2) {
-                    newHours.push(idValue);
-                    grades.push(3);
-                    qpValue = idValue * 3;
-                    newQP.push(qpValue);
-                } else if ($(gradeArray[i]).val() == 3) {
-                    newHours.push(idValue);
-                    grades.push(2);
-                    qpValue = idValue * 2;
-                    newQP.push(qpValue);
-                } else if ($(gradeArray[i]).val() == 4) {
-                    newHours.push(idValue);
-                    grades.push(1);
-                    qpValue = idValue * 1;
-                    newQP.push(qpValue);
-                } else if ($(gradeArray[i]).val() == 5) {
-                    newHours.push(idValue);
-                    grades.push(0);
-                    qpValue = idValue * 0;
-                    newQP.push(qpValue);
-                };
+            }
+            console.log('Course is not repeated.')
+            if ($(gradeArray[i]).val() == 1) {
+                newHours.push(idValue);
+                grades.push(4);
+                qpValue = idValue * 4;
+                newQP.push(qpValue);
+            } else if ($(gradeArray[i]).val() == 2) {
+                newHours.push(idValue);
+                grades.push(3);
+                qpValue = idValue * 3;
+                newQP.push(qpValue);
+            } else if ($(gradeArray[i]).val() == 3) {
+                newHours.push(idValue);
+                grades.push(2);
+                qpValue = idValue * 2;
+                newQP.push(qpValue);
+            } else if ($(gradeArray[i]).val() == 4) {
+                newHours.push(idValue);
+                grades.push(1);
+                qpValue = idValue * 1;
+                newQP.push(qpValue);
+            } else if ($(gradeArray[i]).val() == 5) {
+                newHours.push(idValue);
+                grades.push(0);
+                qpValue = idValue * 0;
+                newQP.push(qpValue);
             };
         };
+        console.log('Old QP Final: ' + oldGrades);
+        const repeatQPAll = oldGrades;
+        const reducer3 = (accumulator, currentValue) => accumulator + currentValue;
+        var newRepeatQPTotal = repeatQPAll.reduce(reducer3);
+        console.log('This is the old QP sum: ' + newRepeatQPTotal);
+
+        console.log('Old Repeat Hours: ' + repeatHours);
+        const repeatHoursAll = repeatHours;
+        const reducer4 = (accumulator, currentValue) => accumulator + currentValue;
+        var newRepeatHoursTotal = repeatHoursAll.reduce(reducer4);
+        console.log('This is the old Hours sum: ' + newRepeatHoursTotal);
+
         console.log(newQP);
         const newHoursAll = newHours;
         console.log('This is the new hours: ' + newHoursAll);
@@ -434,7 +242,10 @@ $(document).on('click','.calcBtn',function() {
         var newQPTotal = newQPAll.reduce(reducer2) + cumQP;
         console.log('This is the new qp total: ' + newQPTotal);
 
-        newGPAValue = (newQPTotal / newHoursTotal).toFixed(3);
+        console.log('newRepeatTotal: ' + newRepeatQPTotal);
+        console.log('newRepeatHoursTotal: ' + newRepeatHoursTotal);
+
+        newGPAValue = ((newQPTotal - newRepeatQPTotal)/ (newHoursTotal - newRepeatHoursTotal)).toFixed(3);
         document.getElementById('newGPA').innerHTML = newGPAValue;
         console.log(newGPAValue);
     });
