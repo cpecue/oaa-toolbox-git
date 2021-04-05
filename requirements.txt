@@ -4,6 +4,7 @@ appdirs==1.4.4
 attrs==20.3.0
 Babel==2.9.0
 bcrypt==3.2.0
+beautifulsoup4==4.9.3
 bleach==3.3.0
 bullet==2.2.0
 certifi==2020.12.5
@@ -47,6 +48,7 @@ pexpect==4.8.0
 Pillow==8.1.2
 pkginfo==1.7.0
 pluggy==0.13.1
+prettytable==2.1.0
 property-manager==3.0
 psutil==5.8.0
 ptyprocess==0.7.0
