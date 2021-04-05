@@ -113,11 +113,11 @@ def selenium():
     password = driver.find_element_by_xpath(
         '/html/body/div/form[1]/div/div/div[2]/div/div/div[1]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/input')
     password.send_keys(e_password)
-    time.sleep(1)
+    time.sleep(2)
     next = driver.find_element_by_xpath(
         '/html/body/div/form[1]/div/div/div[2]/div/div/div[1]/div[2]/div[2]/div/div[2]/div/div[3]/div[2]/div/div/div/div/input')
     next.click()
-    time.sleep(2)
+    time.sleep(3)
     yes = driver.find_element_by_xpath(
         '/html/body/div/form/div/div/div[1]/div[2]/div/div[2]/div/div[3]/div[2]/div/div/div[2]/input')
     yes.click()
