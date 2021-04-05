@@ -1,5 +1,5 @@
-from flask import Flask, render_template, url_for, flash, redirect, request
-import secrets, json
+from flask import render_template, url_for, flash, redirect, request
+import secrets
 import os
 from PIL import Image
 from oaatoolbox import app, db, bcrypt
@@ -7,7 +7,6 @@ from oaatoolbox.forms import RegistrationForm, LoginForm, UpdateAccountForm
 from oaatoolbox.models import User, Declarations, Majors
 from flask_login import login_user, current_user, logout_user, login_required
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 import time
 
 @app.route('/')
