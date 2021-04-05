@@ -6,6 +6,9 @@ from oaatoolbox import app, db, bcrypt
 from oaatoolbox.forms import RegistrationForm, LoginForm, UpdateAccountForm
 from oaatoolbox.models import User, Declarations, Majors
 from flask_login import login_user, current_user, logout_user, login_required
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
 
 @app.route('/')
 @login_required
@@ -86,6 +89,55 @@ def account():
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', title='Account', image_file=image_file, form=form)
 
+@app.route("/_runSelenium", methods=['GET', 'POST'])
+def selenium():
+    e_ID = request.form['advisorEmail']
+    e_password = request.form['advisorPw']
+    studentFN = request.form['studentFN']
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROME_DRIVER_PATH"), chrome_options=chrome_options)
+
+    driver.get(
+        'https://forms.office.com/Pages/ResponsePage.aspx?id=IX3zmVwL6kORA-FvAvWuzwdoWEcc_LNCksX8Xu0GatNURThSMDBZQ01QS082SUpESE5QTlZQTEkwVi4u')
+    time.sleep(5)
+    email = driver.find_element_by_xpath('//*[@id="i0116"]')
+    email.send_keys(e_ID)
+    next = driver.find_element_by_xpath('//*[@id="idSIButton9"]')
+    time.sleep(1)
+    next.click()
+    time.sleep(2)
+    password = driver.find_element_by_xpath(
+        '/html/body/div/form[1]/div/div/div[2]/div/div/div[1]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/input')
+    password.send_keys(e_password)
+    time.sleep(1)
+    next = driver.find_element_by_xpath(
+        '/html/body/div/form[1]/div/div/div[2]/div/div/div[1]/div[2]/div[2]/div/div[2]/div/div[3]/div[2]/div/div/div/div/input')
+    next.click()
+    time.sleep(2)
+    yes = driver.find_element_by_xpath(
+        '/html/body/div/form/div/div/div[1]/div[2]/div/div[2]/div/div[3]/div[2]/div/div/div[2]/input')
+    yes.click()
+
+    major = driver.find_element_by_xpath(
+        '/html/body/div/div/div/div/div/div/div[1]/div[2]/div[2]/div/div/div[2]/div/div/input')
+    major.send_keys(studentFN)
+
+    minor = driver.find_element_by_xpath(
+        '//*[@id="form-container"]/div/div/div/div/div[1]/div[2]/div[2]/div[2]/div/div[2]/div/div/input')
+    minor.send_keys('CHEM')
+
+    student = driver.find_element_by_xpath(
+        '/html/body/div/div/div/div/div/div/div[1]/div[2]/div[2]/div[3]/div/div[2]/div/div/input')
+    student.send_keys('Caleb Pecue')
+    time.sleep(2)
+    button = driver.find_element_by_xpath('/html/body/div/div/div/div/div/div/div[1]/div[2]/div[3]/div[1]/button/div')
+    time.sleep(2)
+    driver.close()
+
 
 @app.route('/declare')
 @login_required
@@ -117,7 +169,7 @@ def layout():
     return render_template('layout.html', cctitle="Layout")
 
 
-@app.route('/about')
+@app.route('/about', methods=['GET', 'POST'])
 @login_required
 def about():
     return render_template('about.html', cctitle="About")
